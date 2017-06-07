@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+		<script src="../js/myScript.js"></script>
+		<title>UIMA User Interface </title></head>
+	<body onload="whenLoading()">
+		<div id="div1">
+		<p id='p1'>Enter text here</p>
+		 <form action="../php/action.php" id="textform" method="post">
+		 	<textarea id="textarea" name="text" form="textform" placeholder="Enter text here..." rows="20" cols="50"></textarea> 
+		 	<br>
+		  <div id="div2">
+		<input id="sub" type="submit" value="Submit" onclick="FormSubmitted()"></div>
+		  <div id="div3" style="display:none">
+		</div>
+		</form>
+		</div>
+
+		
+	</body>
+
+</html>

@@ -1,0 +1,32 @@
+12-23 [Apache UIMA]
+25-73 [Unstructured Information Management Architecture]
+104-130 [Apache Software Foundation]
+320-355 [Unstructured Information Management]
+1489-1500 [Apache UIMA]
+2051-2062 [Apache UIMA]
+2207-2218 [Apache UIMA]
+2240-2309 [Michael Baessler
+Edward Epstein
+Thilo Goetz
+Adam Lally
+Marshall Schor]
+2312-2323 [Apache UIMA]
+2342-2350 [Ken Coar]
+2367-2381 [Vice President]
+2383-2391 [Sam Ruby]
+12-23 [Apache UIMA]
+25-73 [Unstructured Information Management Architecture]
+104-130 [Apache Software Foundation]
+320-355 [Unstructured Information Management]
+1489-1500 [Apache UIMA]
+2051-2062 [Apache UIMA]
+2207-2218 [Apache UIMA]
+2240-2309 [Michael Baessler
+Edward Epstein
+Thilo Goetz
+Adam Lally
+Marshall Schor]
+2312-2323 [Apache UIMA]
+2342-2350 [Ken Coar]
+2367-2381 [Vice President]
+2383-2391 [Sam Ruby]
