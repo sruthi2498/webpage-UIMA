@@ -2,6 +2,11 @@ function whenLoading() {
 	//alert("here");
    var textarea=document.getElementById("textarea");
    textarea.placeholder="Enter text here...";
+   textarea.value="";
+   var div=document.getElementById("div3");
+   div.style.display = "none";
+   var d=document.getElementById("div2");
+	d.style.display = "block"; 
 }
 
 function FormSubmitted() {
