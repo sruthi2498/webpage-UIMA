@@ -10,14 +10,14 @@
 			echo "<a id='sub' href=\"javascript:history.go(-1)\">GO BACK</a><br>";
 			$filelist="/home/sruthi/dev/UIMA-NLP-Platform/MyWorkspace/data/text_files/op/list.txt";
 			$myfile1=fopen($filelist,"r")or die("Unable to open file!");
-			echo "<p id='p2'>The annotators are</p>";
+			echo "<p id='p2'>Choose :</p>";
 			echo "<br>";
 			echo "<div id='div6'>";
 			$count=1;
 			while(!feof($myfile1)) {
 				$an=trim(fgets($myfile1));
 				//echo $an;
-				if($an)echo "<input type='radio' id='b".$count ."' value=".$an." name='Option'>".$an."<br>";
+				if($an && $an!="DocumentAnnotation")echo "<input type='radio' id='b".$count ."' value=".$an." name='Option'>".$an."<br>";
 				$count++;
 
 			}
