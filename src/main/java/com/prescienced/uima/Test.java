@@ -97,20 +97,6 @@ public static int Find(String[] array, String e) {
 			jcas.setDocumentText(everything);
 			jcas.setDocumentLanguage("en");
 			ae.process(jcas);
-			//String res=jcas.getDocumentText();
-			//System.out.println(res);
-			 // Get an iterator over types
-			 /* Iterator typeIterator = jcas.getTypeIterator();
-			  Type t;
-			  System.out.println("Types in the type system:");
-			  while (typeIterator.hasNext()) {
-			    // Retrieve a type...
-			    t = (Type) typeIterator.next();
-			    // ...and print its name.
-			    System.out.println(t.getName());
-			  }
-			  System.out.println();*/
-
 			FSIterator it = jcas.getAnnotationIndex().iterator();
 			Annotation a = null;
 
@@ -174,21 +160,17 @@ public static int Find(String[] array, String e) {
 			if (!f2.exists()) {
 				f2.createNewFile();
 			}
-			output2 = null;
-			fw2 = null;
-			fw2 = new FileWriter(f2.getAbsoluteFile(), true);
-			output2 = new BufferedWriter(fw2);
+			 FileReader fileReader = new FileReader(new File(filelist));
 
-			while (it.isValid()){
-				a = (Annotation) it.get();
-				int s=a.getBegin();
-				int e=a.getEnd();
-				Type mytype=a.getType();
-				String searchVal=mytype.toString();
-				String actualAn=AnnotatorName(searchVal);
-				System.out.println("new name + "+actualAn);
-				//System.out.println(searchVal+" "+actualAn);
-				filename="data/text_files/op/"+actualAn+".txt";
+ 			BufferedReader br2 = new BufferedReader(fileReader);
+
+			 String line = null;
+			 while ((line = br2.readLine()) != null){                       
+			   // System.out.println(cells.length);
+			    System.out.println(line);
+			   // System.out.println("k\n");
+			    String actualAn=line;
+			    filename="data/text_files/op/"+actualAn+".csv";
 				file = new File(filename);
 				//if(file.exists())System.out.println("file present");
 				if (!file.exists()) {
@@ -198,20 +180,16 @@ public static int Find(String[] array, String e) {
 				pw2.close();
 				fw = new FileWriter(file.getAbsoluteFile(), true);
 				output = new BufferedWriter(fw);
-				//output.write(text);
+				output.write("");
 				//output.write("\n");
 				output.close();
 				fw.close();
-				it.moveToNext();
 			}
-
-
 			output2.close();
 			fw2.close();
-
-
 			it = jcas.getAnnotationIndex().iterator();
 			a = null;
+		
 
 			while (it.isValid()){
 				a = (Annotation) it.get();
@@ -221,7 +199,7 @@ public static int Find(String[] array, String e) {
 				String searchVal=mytype.toString();
 
 				String actualAn=AnnotatorName(searchVal);
-				System.out.println("new name + "+actualAn);
+				//System.out.println("new name + "+actualAn);
 				//System.out.println(searchVal+" "+actualAn);
 				filename="data/text_files/op/"+actualAn+".csv";
 				file = new File(filename);
@@ -231,9 +209,11 @@ public static int Find(String[] array, String e) {
 				}
 				fw = new FileWriter(file.getAbsoluteFile(), true);
 				output = new BufferedWriter(fw);
-				String text=s+","+e+"," + a.getCoveredText();
-				output.write(text);
-				output.write("\n");
+				if(s && e && a.getCoveredText()){
+					 String text=s+","+e+"," + a.getCoveredText();
+					output.write(text);
+					output.write("\n");
+				}
 				output.close();
 				fw.close();
 				it.moveToNext();
